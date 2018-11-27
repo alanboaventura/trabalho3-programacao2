@@ -1,0 +1,11 @@
+/build/
+/dist/
+/out/
+/nbproject/
+/.idea/
+/bin/
+/META-INF/
+*.iml
+.settings/
+.classpath
+.project
