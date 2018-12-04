@@ -39,7 +39,7 @@ public class Livro {
         this.codigo = codigo;
     }
 
-    public int getAno() {
+    public Integer getAno() {
         return ano;
     }
 
