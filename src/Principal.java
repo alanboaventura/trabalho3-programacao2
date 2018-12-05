@@ -55,9 +55,7 @@ public class Principal {
 		// System.out.println("\nLista dos livros da Biblioteca 2");
 		// System.out.print(list2.toString()+"\n");
 
-		ComparadorLivroPorIsbnEAno comparador = new ComparadorLivroPorIsbnEAno();
-
-		TreeSet<Livro> listaLivroComparadorIsbnEAno = new TreeSet<Livro>(comparador);
+		Set<Livro> listaLivroComparadorIsbnEAno = new TreeSet<Livro>();
 
 		list1.forEach((livro) -> listaLivroComparadorIsbnEAno.add(livro));
 		list2.forEach((livro) -> listaLivroComparadorIsbnEAno.add(livro));

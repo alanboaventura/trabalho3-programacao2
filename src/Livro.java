@@ -1,54 +1,64 @@
-public class Livro {
+import java.util.Comparator;
 
-    private String titulo;
+public class Livro implements Comparable<Livro> {
 
-    private String isbn;
+	private String titulo;
 
-    private String codigo;
+	private String isbn;
 
-    private int ano;
+	private String codigo;
 
-    public Livro(String codigo, String isbn, int ano, String titulo) {
-        this.titulo = titulo;
-        this.isbn = isbn;
-        this.codigo = codigo;
-        this.ano = ano;
-    }
+	private int ano;
 
-    public String getTitulo() {
-        return titulo;
-    }
+	public Livro(String codigo, String isbn, int ano, String titulo) {
+		this.titulo = titulo;
+		this.isbn = isbn;
+		this.codigo = codigo;
+		this.ano = ano;
+	}
 
-    public void setTitulo(String titulo) {
-        this.titulo = titulo;
-    }
+	public String getTitulo() {
+		return titulo;
+	}
 
-    public String getIsbn() {
-        return isbn;
-    }
+	public void setTitulo(String titulo) {
+		this.titulo = titulo;
+	}
 
-    public void setIsbn(String isbn) {
-        this.isbn = isbn;
-    }
+	public String getIsbn() {
+		return isbn;
+	}
 
-    public String getCodigo() {
-        return codigo;
-    }
+	public void setIsbn(String isbn) {
+		this.isbn = isbn;
+	}
 
-    public void setCodigo(String codigo) {
-        this.codigo = codigo;
-    }
+	public String getCodigo() {
+		return codigo;
+	}
 
-    public Integer getAno() {
-        return ano;
-    }
+	public void setCodigo(String codigo) {
+		this.codigo = codigo;
+	}
 
-    public void setAno(int ano) {
-        this.ano = ano;
-    }
+	public Integer getAno() {
+		return ano;
+	}
 
-    @Override
-    public String toString() {
-        return String.format("(Ano <%s>, ISBN <%s>, Título <%s>, Código <%s>)", ano, isbn, titulo, codigo);
-    }
+	public void setAno(int ano) {
+		this.ano = ano;
+	}
+
+	@Override
+	public String toString() {
+		return String.format("(Ano <%s>, ISBN <%s>, Título <%s>, Código <%s>)", ano, isbn, titulo, codigo);
+	}
+
+	@Override
+	public int compareTo(Livro o) {
+	    return Comparator.comparing(Livro::getAno)
+	    		.thenComparing(Livro::getIsbn)
+	             .compare(this, o);
+	}
+	
 }
